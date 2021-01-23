@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>账号信息填写页面</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .all {
+            width: 300px;
+            height: 100px;
+            margin: 100px auto;
+        }
+
+        #store {
+            width: 60px;
+            height: 25px;
+            position: absolute;
+            left: 50%;
+            margin-left: -30px;
+            border-radius: 5px;
+            background-color: #FC021B;
+            border: none;
+            color: #fff;
+            outline: none;
+            cursor: pointer;
+        }
+
+        .word,
+        .choice {
+            float: left;
+        }
+
+        .choice {
+            margin-left: 10px;
+        }
+
+        span {
+            color: #6c6e6e;
+        }
+
+        #store {
+            cursor: pointer;
+        }
+
+        #name,
+        #password,
+        #phoneNum {
+            text-indent: 10px;
+            border: 1px #D7D8D8 solid;
+            outline: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="all">
+        <div class="word">
+            <span>姓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名:</span><br><br>
+            <span>性&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;别:</span><br><br>
+            <span>手机号码：</span><br><br>
+            <span>修改密码:</span><br><br>
+        </div>
+        <div class="choice">
+            <input type="text" id="name" placeholder="请输入姓名">
+            <br><br>
+            <input type="radio" id="sex_m" checked="checked" name="1">男
+            <input type="radio" id="sex_w" checked="checked" name="1">女
+            <br><br>
+            <input type="text" id="phoneNum" placeholder="请输入手机号">
+            <br><br>
+            <input type="text" id="password" placeholder="请输入密码">
+        </div>
+    </div>
+    <input type="button" value="保存" id="store" onclick="test()"></input>
+    <script>
+        function test() {
+            var flag = 1;
+            var userNameRule = /^[\u4e00-\u9fa5]{2,5}$/;
+            var cellphoneRule = /0?(13|14|15|18|17|19)[0-9]{9}/;
+            var passwordRule = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]{2,})(?=.*[#&*?@])[a-zA-Z0-9#&*?@]{9,15}$/;
+            var name = document.getElementById('name').value;
+            var phoneNum = document.getElementById('phoneNum').value;
+            var password = document.getElementById('password').value;
+            if (!userNameRule.test(name.trim()) || name == '') {
+                flag = 0;
+            }
+            if (!cellphoneRule.test(phoneNum.trim()) || phoneNum == '') {
+                flag = 0;
+            }
+            if (!passwordRule.test(password.trim()) || password == '') {
+                flag = 0;
+            }
+            if (flag) {
+                alert("修改成功！");
+            }
+            else {
+                alert("格式错误！");
+            }
+        }
+    </script>
+</body>
+
+</html>
