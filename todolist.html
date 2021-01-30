@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="vue.js" type="text/javascript" charset="utf-8"></script>
+		 <link rel="stylesheet" href="todolist.css">
+	</head>
+	<body>
+		<div id="app">
+			<div id="header">
+				<label for="_input">todolist</label>
+				<input id="_input" type="text" placeholder="添加一个小任务" v-model="message" @keyup.enter="add" />
+			</div>
+			<div id="list">
+				<div id="ing">
+					<h2>正在进行</h2>
+					<button id="delete" @click="deleteAll" >全部删除</button>
+					<a id="edit" @click="edit" >编辑(回车保存)</a>
+				</div>
+				<ul id="todo">
+					<li v-for="(item,index) in arr">
+						<sapn v-show="!isShow">{{item}}</sapn>
+						<input type="text" name="" id="" v-if="isShow" v-model="temp[index]" @keyup.enter="editInput(index)" />
+						<a @click="delete1(index)">删除</a>
+					</li>
+				</ul>
+				<h4>共<span1>{{arr.length}}</span1>个任务</h4>
+			</div>
+		</div>
+
+		<script type="text/javascript">
+			var app = new Vue({
+				el: "#app",
+				data: {
+					arr: [],
+					message: "",
+					temp: [],
+					isShow: false
+				},
+				methods: {
+					// 添加列表项
+					add: function() {
+						this.arr.push(this.message);
+						this.message = "";
+						this.isShow = false;
+					},
+					//显示编辑框
+					edit: function() {
+						this.temp = this.arr;
+						this.isShow = true;
+					},
+					//修改内容
+					editInput: function(index) {
+						this.isShow = false;
+						this.arr[index] = this.temp[index];
+					},
+					//删除单个项
+					delete1: function(index) {
+						this.arr.splice(index, 1);
+					},
+					//删除全部
+					deleteAll: function() { //全部清空
+						this.arr = [];
+					}
+				}
+			});
+		</script>
+
+	</body>
+</html>

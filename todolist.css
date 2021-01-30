@@ -1,0 +1,124 @@
+* {
+	padding: 0;
+	margin: 0;
+}
+
+body {
+	background-color: #F7F8F9;
+}
+
+#header {
+	height: 250px;
+	width: 800px;
+	margin: 60px auto;
+	position: relative;
+	background-color: #fff;
+	box-shadow: 0px 3px 6px #D7D8D8;
+}
+
+label,
+#_input {
+	position: absolute;
+}
+
+label {
+	left: 50px;
+	top: 50px;
+	font-size: 30px;
+}
+
+#_input {
+	left: 50px;
+	top: 150px;
+	width: 700px;
+	height: 40px;
+	text-indent: 10px;
+	border-radius: 5px;
+	border: 1px #D7D8D8 solid;
+	outline: none;
+}
+
+#list,
+#ing {
+	position: relative;
+	width: 800px;
+	margin: auto;
+}
+
+#ing {
+	height: 30px;
+}
+
+h2 {
+	color: #707070;
+	padding-left: 50px;
+	font-size: 25px;
+	font-weight: 400;
+}
+
+#delete {
+	outline: none;
+	position: relative;
+	font-size: 15px;
+	font-weight: 400;
+	left: 650px;
+	top: -30px;
+	width: 100px;
+	height: 35px;
+	background-color: #FC021B;
+	color: #fff;
+	border: none;
+	border-radius: 10px;
+	cursor: pointer;
+}
+
+#edit {
+	position: relative;
+	font-size: 15px;
+	font-weight: 400;
+	color: #FC021B;
+	top: -30px;
+	left: 400px;
+	cursor: pointer;
+}
+
+li {
+	position: relative;
+	background-color: #fff;
+	width: 625px;
+	height: 72px;
+	margin: auto;
+	border-radius: 5px;
+	list-style: none;
+	box-shadow: 0px 3px 6px #D7D8D8;
+	margin-top: 40px;
+	padding-left: 80px;
+	line-height: 72px;
+	font-size: 18px;
+}
+li a{
+	position:absolute;
+	    right:30px;
+	    text-decoration:none;
+	    font-size:16px;
+	    color:#FC021B;
+		cursor:pointer;
+}
+li input{
+	font-size:18px;
+	width:500px;
+	height:30px;
+	border:none;
+	outline:none;
+	border-bottom:1px solid  #D7D8D8;
+}
+h4{
+	font-weight:400;
+	position:relative;
+	top:50px;
+	left:670px;
+	color: #707070;
+}
+span1{
+	color:red;
+}
